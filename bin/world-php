@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+function includeIfExists($file)
+{
+    if (file_exists($file)) {
+        return include $file;
+    }
+}
+
+if (
+    (!$classLoader = includeIfExists(__DIR__.'/../vendor/autoload.php')) &&
+    (!$classLoader = includeIfExists(__DIR__.'/../../../autoload.php'))
+) {
+    echo 'You must set up the project dependencies';
+    exit(1);
+}
+
+use markjeee\WorldPhp;
+
+$hello = new WorldPhp;
+echo $hello->hello()."\n";
+?>

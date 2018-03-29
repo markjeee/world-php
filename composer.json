@@ -1,0 +1,23 @@
+{
+  "name": "markjeee/world-php",
+  "description": "A demo composer package",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Mark John Buenconsejo",
+      "email": "hi@markjeee.com"
+    }
+  ],
+  "require": {
+    "php": "^5.4|^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  },
+  "autoload": {
+      "psr-4": {
+          "markjeee\\": "src/markjeee/"
+      }
+  },
+  "bin": [ "bin/world-php" ]
+}
